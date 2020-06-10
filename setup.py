@@ -40,7 +40,7 @@ REQUIRED_PACKAGES = [
     # a version of cloudpickle that is incompatible with tensorflow-probability
     # 0.7.0.
     'gym < 0.16.0',
-    'imageio',
+    'imageio < 2.8.0',
     'intervaltree >= 2.1.0',
     'joblib >= 0.12',
     'librosa >= 0.6.2',
@@ -52,7 +52,7 @@ REQUIRED_PACKAGES = [
     'pretty_midi >= 0.2.6',
     'protobuf >= 3.6.1',
     'pygtrie >= 2.3',
-    'python-rtmidi >= 1.1, < 1.2',  # 1.2 breaks us
+    #'python-rtmidi >= 1.1, < 1.2',  # 1.2 breaks us
     'scikit-image',
     'scipy >= 0.18.1',
     'six >= 1.12.0',
@@ -72,7 +72,8 @@ REQUIRED_PACKAGES = [
     'apache-beam[gcp] >= 2.14.0, < 2.19.0',  # Temporary fix for 'typing' issue
     # Temporary fix for:
     # https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2737?filter=allopenissues
-    'avro-python3 !=1.9.2',
+    #'avro-python3 < 1.9.0',
+    'avro',
 ]
 
 EXTRAS_REQUIRE = {

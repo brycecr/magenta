@@ -15,8 +15,8 @@ else
            --path_in $1 \
            --path_out $4/ \
            --strech \
-           --xsize 640 \
-           --ysize 360 \
+           --xsize 1920 \
+           --ysize 1080 \
            --delete
     ffmpeg -i $4/%04d.jpg -vcodec libx264 $4.mp4
 fi

@@ -35,7 +35,8 @@ else
             rm -f $1/frames/*.jpg
             python ../tools/extract_frames.py \
                    --video_in $1/video.mp4 \
-                   --path_out $1/frames
+                   --path_out $1/frames \
+                   --size 512
             ;;
         *)
             echo "keeping 'frames' folder"
@@ -186,7 +187,9 @@ else
                --recursion 15 \
                --phase pre_recursion \
                --dataset_path $1/recur \
-               --frames_path $1/frames
+               --frames_path $1/frames \
+               --fine_size 512 \
+               --load_size 572
 # 15 is the default value, you can play with it and will get diferents results
         echo "generate pairs from recursion"
         python join_pairs.py \
@@ -194,7 +197,7 @@ else
                --path_right $1/good \
                --path_out $1/train \
                --prefix pr \
-               --size 256
+               --size 1080
 
         echo "select some pairs for recursion (long)"
         rm -rf $1/recur
@@ -208,7 +211,9 @@ else
                --recursion 100 \
                --phase pre_recursion \
                --dataset_path $1/recur \
-               --frames_path $1/frames
+               --frames_path $1/frames \
+               --fine_size 512 \
+               --load_size 572
 # 100 is the default value, you can play with it and will get diferents results
         echo "generate pairs from recursion (long)"
         python join_pairs.py \
@@ -216,7 +221,7 @@ else
                --path_right $1/good \
                --path_out $1/train \
                --prefix pr \
-               --size 256
+               --size 1080
 
     done
     echo "done $2 iterations"
