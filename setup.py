@@ -44,6 +44,7 @@ REQUIRED_PACKAGES = [
     'intervaltree >= 2.1.0',
     'joblib >= 0.12',
     'librosa >= 0.6.2',
+    'llvmlite < 0.32.0',
     'matplotlib >= 1.5.3',
     'mido == 1.2.6',
     'mir_eval >= 0.4',
